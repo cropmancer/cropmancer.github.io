@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cropmancer Litepaper v0.1 — Idle Farming on Solana</title>
+<meta name="description" content="The Cropmancer litepaper: an idle farming game on Solana with a $1 Genesis Plot NFT entry, the $MANCER token, and a self-funding rewards pool.">
+<style>
+:root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65}
+a{color:var(--grn);text-decoration:none}
+.wrap{max-width:780px;margin:0 auto;padding:0 20px 40px}
+header{padding:46px 0 6px;text-align:center}
+h1{font-size:40px;letter-spacing:1px;background:linear-gradient(90deg,var(--grn),var(--pur));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ver{color:var(--gold);font-size:14px;letter-spacing:1px}
+.tag{color:var(--mut);margin-top:6px}
+.mascot{width:min(300px,70vw);border-radius:16px;border:1px solid var(--line);margin:20px auto 4px;display:block}
+h2{font-size:23px;margin:34px 0 10px;color:var(--txt)}
+h2 span{color:var(--grn)}
+p,li{color:#d9d2f5;font-size:16px}
+ul,ol{margin:8px 0 8px 22px}
+li{margin:4px 0}
+b{color:var(--txt)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:10px 0}
+td,th{padding:10px 13px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--mut)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--mut);font-size:14.5px;margin-top:14px}
+.back{display:inline-block;margin-top:26px}
+footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid var(--line);margin-top:36px;padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="ver">LITEPAPER · v0.1 · PRE-LAUNCH</div>
+<h1>CROPMANCER</h1>
+<div class="tag">The idle farm that grows while you sleep — a browser idle-farming game on <b>Solana</b>, powered by the <b>$MANCER</b> token and the <b>Genesis Plot NFT</b>.</div>
+<img class="mascot" src="cropmancer.jpg" alt="The Cropmancer mascot">
+<div class="note">Status: pre-launch. This document describes the game's design. Nothing in it is a promise of price, earnings, or return.</div>
+</header>
+<h2>1. <span>Introduction</span></h2>
+<p>Cropmancer is an idle farming game. Your farm produces on its own — while you work, while you sleep, while the app is closed. You check in once or twice a day, claim your harvest, sell it for $MANCER, and spend $MANCER on upgrades that make your farm produce faster. No reflexes. No grinding. Just numbers going up, on-chain.</p>
+<h2>2. Getting in — <span>the Genesis Plot NFT</span></h2>
+<p>Entry is a <b>one-time $1 registration</b>, paid in SOL. In return, the player receives a <b>Genesis Plot NFT</b>:</p>
+<ul>
+<li>It is the player's <b>access key</b> — the game checks NFT ownership from the connected wallet. No NFT, no farm.</li>
+<li>It is the player's <b>starter land</b> — every farm begins as one Genesis Plot.</li>
+<li>It is a <b>compressed NFT (cNFT)</b> on Solana, so minting costs a fraction of a cent and nearly all of the $1 funds the game economy.</li>
+<li>It is <b>transferable</b> — a player who stops playing can sell their plot to a new player on any Solana NFT marketplace.</li>
+</ul>
+<p>One active farm per Genesis Plot NFT.</p>
+<h2>3. <span>The game loop</span></h2>
+<ol>
+<li><b>Produce</b> — your farm generates Produce automatically, 24/7, at your production rate.</li>
+<li><b>Claim</b> — open the game and claim the accumulated harvest. Offline production is capped at <b>12 hours</b>, so checking in twice a day is optimal — never mandatory.</li>
+<li><b>Sell</b> — sell Produce for $MANCER in the in-game Harvest Market. The Produce→$MANCER rate is set by the Rewards Pool (Section 5), not fixed, so rewards stay sustainable.</li>
+<li><b>Upgrade</b> — spend $MANCER on land expansions, animals, and machines. Every upgrade raises your production rate. A portion of every upgrade spend is <b>burned</b>.</li>
+<li><b>Compete</b> — a weekly production leaderboard ranks every farm. Seasons reset the race, not your farm.</li>
+</ol>
+<p>Production is calculated <b>server-side</b> from timestamps. Changing your device clock or editing the page does nothing — the server is the referee.</p>
+<table>
+<tr><th colspan="2">Launch parameters (tunable before launch)</th></tr>
+<tr><td>Starter production rate</td><td>10 Produce / hour</td></tr>
+<tr><td>Offline accumulation cap</td><td>12 hours</td></tr>
+<tr><td>Registration</td><td>$1 in SOL, one-time</td></tr>
+<tr><td>Upgrade burn</td><td>10% of every upgrade spend</td></tr>
+</table>
+<h2>4. The <span>$MANCER</span> token</h2>
+<table>
+<tr><td>Name</td><td>Cropmancer</td></tr>
+<tr><td>Ticker</td><td>$MANCER</td></tr>
+<tr><td>Chain</td><td>Solana</td></tr>
+<tr><td>Supply</td><td>1,000,000,000 (fixed)</td></tr>
+<tr><td>Launch</td><td>Fair launch on pump.fun — no presale, no team allocation</td></tr>
+<tr><td>Contract</td><td>Published at launch (TBA)</td></tr>
+</table>
+<p><b>Utility — $MANCER is the game's only currency:</b></p>
+<ul>
+<li><b>Earn it</b> by selling your harvest in the Harvest Market.</li>
+<li><b>Spend it</b> on upgrades: land, animals, machines, and future cosmetics and season passes.</li>
+<li><b>Burn it</b> — 10% of all upgrade spending is burned forever, so the more people play, the scarcer $MANCER gets.</li>
+</ul>
+<h2>5. The economy — <span>sources and sinks</span></h2>
+<p>The economy is designed as a loop, not a faucet.</p>
+<p><b>Sources of $MANCER rewards.</b> The Rewards Pool pays for harvests. It is funded by <b>50% of every $1 registration</b> and by <b>creator fees</b> from $MANCER trading (0.30% of bonding-curve volume on pump.fun; tiered after graduation). The Produce→$MANCER rate floats with the pool's balance: a full pool pays generously, a thin pool pays less. Rewards can never exceed what the pool actually holds.</p>
+<p><b>Sinks.</b> Upgrades (90% recycled to the Rewards Pool, <b>10% burned</b>). Future: season passes, cosmetics, extra plots.</p>
+<p><b>Project revenue.</b> 50% of registration fees, plus a creator-fee share allocated to operations.</p>
+<p>This structure means player rewards come from <b>new players and trading activity</b> — stated plainly, the way it should be.</p>
+<h2>6. <span>Fair play</span></h2>
+<ul>
+<li>Production is computed server-side; client tampering has no effect.</li>
+<li>One farm per Genesis Plot NFT.</li>
+<li>The Rewards Pool balance and the Produce→$MANCER rate are displayed in-game, in the open.</li>
+</ul>
+<h2>7. Risks and <span>disclaimer</span></h2>
+<p>Cropmancer is a game. $MANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is <b>no guarantee of any price, earnings, or return</b>. Game parameters in this litepaper may be tuned before launch; material changes will be announced on the official channels.</p>
+<a class="back" href="index.html">← Back to the Cropmancer site</a>
+<footer>Cropmancer — plant the spell. Harvest the bag.<br><a href="index.html">cropmancer.github.io</a> · <a href="https://x.com/MuseAIv3" target="_blank" rel="noopener">@MuseAIv3</a></footer>
+</div>
+</body>
+</html>
