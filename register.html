@@ -28,6 +28,21 @@ h1{font-size:40px;margin:14px 0 6px;background:linear-gradient(90deg,var(--grn),
 .addr{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;word-break:break-all;background:#0d0a1a;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:12px 0}
 .btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:700;background:linear-gradient(90deg,var(--pur),#6d28d9);color:#fff}
 .warn{background:#221a3d;border:1px solid var(--gold);color:var(--gold);border-radius:12px;padding:12px 16px;font-size:14px;margin:16px 0 4px;text-align:left}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:24px 0 8px;text-align:left}
+.sec h2{font-size:21px;margin-bottom:8px}
+.sec h2 span{color:var(--grn)}
+.sec p{color:var(--mut);font-size:14.5px}
+.sec p b{color:var(--txt)}
+.gameimg{width:100%;border-radius:12px;border:1px solid var(--line);display:block;margin:6px 0 12px}
+.loop{list-style:none;margin-top:8px}
+.loop li{padding:7px 0;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.loop li b{color:var(--txt)}
+.prize{font-size:36px;font-weight:800;color:var(--gold);text-align:center;margin:4px 0 2px}
+.prize-sub{text-align:center;color:var(--mut);font-size:14px;margin-bottom:10px}
+.prize-sub b{color:var(--txt)}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.tier{border:1px solid var(--line);border-radius:12px;padding:11px;text-align:center;font-size:14px;color:var(--mut)}
+.tier b{display:block;color:var(--txt);font-size:15.5px;margin-bottom:2px}
 form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:24px 0 8px;text-align:left}
 form h2{font-size:19px;margin-bottom:4px}
 form p{color:var(--mut);font-size:14px;margin-bottom:8px}
@@ -62,6 +77,32 @@ footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 </div>
 
 <div class="warn">⚠️ <b>Send only from a wallet you control — never from an exchange</b> (Binance, etc.). The NFT is minted to the wallet that sends the payment; a payment sent from an exchange would mint your NFT to the exchange's wallet and it would be lost. Send exactly 0.0145 SOL: overpaying still mints (no change returned); underpaying does not mint.</div>
+
+<div class="sec">
+<h2>🎮 How the game <span>plays</span></h2>
+<img class="gameimg" src="gameplay.jpg" alt="Cropmancer gameplay concept — your farm, your Produce, one big CLAIM button">
+<p>Your Genesis Plot is a working farm, not a JPEG. The loop:</p>
+<ul class="loop">
+<li>🌾 <b>Produce</b> — your farm grows Produce automatically, 24/7 — even while you sleep (offline earnings capped at 12 hours).</li>
+<li>🧺 <b>Claim</b> — pop in, hit CLAIM, and harvest everything your farm grew.</li>
+<li>🪙 <b>Sell</b> — trade Produce for $MANCER in the Harvest Market.</li>
+<li>🚜 <b>Upgrade</b> — spend $MANCER on land, animals and machines to grow faster. 90% of upgrade spend flows back into the Rewards Pool.</li>
+<li>🏆 <b>Compete</b> — every harvest pushes you up the leaderboard. Seasons reset the race, not your farm.</li>
+</ul>
+</div>
+
+<div class="sec">
+<h2>🏆 Leaderboard <span>rewards</span></h2>
+<div class="prize">10,000 USDT</div>
+<div class="prize-sub">paid in SOL · split across the <b>Top 500</b> farmers on the leaderboard</div>
+<p>Beyond selling your harvest, the leaderboard itself pays: the top 500 farmers split a <b>10,000 USDT reward pool, paid out in SOL</b> to the wallets holding their Genesis Plots — funded by the Rewards Pool (50% of every registration + creator fees). The higher you climb, the bigger your share.</p>
+<div class="tiers">
+<div class="tier"><b>🥇 Top 10</b>The biggest shares</div>
+<div class="tier"><b>🥈 Rank 11–100</b>Strong farmer payouts</div>
+<div class="tier"><b>🥉 Rank 101–500</b>Every top-500 farm earns</div>
+</div>
+<p style="margin-top:12px">No Genesis Plot, no leaderboard — registration is the $1 mint at the top of this page.</p>
+</div>
 
 <form action="https://formsubmit.co/c7726313cab6b514197f65e9370631e7" method="POST">
 <h2>Want the launch ping? (optional)</h2>
