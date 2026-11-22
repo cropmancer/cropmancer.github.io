@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#0d0a1a;--card:#171130;--line:#2c2154;--txt:#efeaff;--mut:#a79fd1;--grn:#14f195;--pur:#9945ff;--gold:#ffd166}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.55}
+body{background:radial-gradient(900px 480px at 50% -80px,rgba(153,69,255,.20),transparent 60%),radial-gradient(700px 420px at 88% 32%,rgba(20,241,149,.07),transparent 60%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.55}
 a{color:var(--grn);text-decoration:none}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
 header{padding:56px 0 8px;text-align:center}
@@ -28,6 +28,29 @@ h2 span{color:var(--grn)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
 .card h3{font-size:17px;margin-bottom:6px}
 .card p{color:var(--mut);font-size:15px}
+.card,.btn{transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(153,69,255,.22)}
+.btn:hover{transform:translateY(-2px)}
+.status{margin:26px auto 0;max-width:640px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-size:15px;color:var(--mut);text-align:left}
+.status b{color:var(--txt)}
+.status .live{color:var(--grn);font-weight:700}
+.status .soon{color:var(--gold);font-weight:700}
+.mock{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:640px;margin:0 auto}
+.mock .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14.5px;color:var(--mut);margin-bottom:12px}
+.mock .top b{color:var(--txt)}
+.plots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.plot{background:#0d0a1a;border:1px solid var(--line);border-radius:12px;padding:14px 6px;text-align:center;font-size:26px}
+.plot small{display:block;font-size:11.5px;color:var(--mut);margin-top:6px}
+.claimbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.claimbar .btn{padding:10px 18px}
+.bar{height:14px;border-radius:999px;background:#0d0a1a;border:1px solid var(--line);overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--grn),var(--pur))}
+.flow{font-size:15px;color:var(--mut)}
+.flow b{color:var(--txt)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+.faq p{color:var(--mut);font-size:15px;margin-top:8px}
+.note{font-size:13.5px;color:var(--mut);text-align:center;margin-top:10px}
 .num{font-size:22px;color:var(--pur);font-weight:800}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 td,th{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:15px}
@@ -38,6 +61,24 @@ td:first-child{color:var(--mut);width:42%}
 .road td:first-child{width:24%;color:var(--gold);font-weight:700}
 .done{color:var(--grn);font-weight:700}.next{color:var(--gold);font-weight:700}
 .disc{color:var(--mut);font-size:13.5px;border-top:1px solid var(--line);margin-top:42px;padding:20px 0 34px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.mascot{animation:floaty 5s ease-in-out infinite}
+@keyframes shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+h1{background-size:200% auto;animation:shine 7s linear infinite}
+.shot{width:100%;max-width:760px;border-radius:16px;border:1px solid var(--line);display:block;margin:0 auto 16px;box-shadow:0 12px 40px rgba(20,241,149,.16)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.poolflow{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;justify-content:center;margin:8px 0 4px}
+.pf{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14.5px;color:var(--mut);max-width:235px}
+.pf b{color:var(--txt)}
+.pf .big{font-size:19px}
+.arrow{align-self:center;font-size:20px;color:var(--grn)}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.phase{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.phase .st{font-size:13px;letter-spacing:.4px;font-weight:700}
+.phase h3{font-size:16.5px;margin:6px 0 4px}
+.phase p{color:var(--mut);font-size:14.5px}
+.comm{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 </style>
 </head>
@@ -55,7 +96,9 @@ footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 <a class="btn dim" href="#" onclick="return false">🪙 $MANCER — launching soon</a>
 <a class="btn dim" href="#" onclick="return false">🎫 Registration — opens at launch</a>
 </div>
+<div class="status"><span class="live">● Phase 1 live now</span> — this site + the litepaper are up. &nbsp;<span class="soon">◐ Phase 2 next:</span> <b>$MANCER fair launch on pump.fun</b> (contract TBA) and <b>$1 registration</b> opening with it. Nothing to buy or register yet — no contract address exists, so any $MANCER you see before launch is not ours.</div>
 </header>
+
 <section>
 <h2>How it <span>works</span></h2>
 <div class="grid">
@@ -65,6 +108,27 @@ footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 <div class="card"><div class="num">4</div><h3>Upgrade &amp; climb</h3><p>Spend $MANCER on land, animals and machines to raise your production rate — and climb the weekly leaderboard.</p></div>
 </div>
 </section>
+
+<section>
+<h2>See the <span>game</span></h2>
+<img class="shot" src="gameplay.jpg" alt="Cropmancer gameplay concept art — farm plots, harvest ready, CLAIM button">
+<div class="mock">
+<div class="top"><span>🌾 <b>Your farm</b> · 1 Genesis Plot</span><span>⚡ <b>10 Produce / hour</b></span><span>🧺 <b>86 Produce</b> ready</span><span>🪙 <b>1,240 $MANCER</b></span></div>
+<div class="plots">
+<div class="plot">🌱<small>Growing · 2h</small></div>
+<div class="plot">🌻<small>Ready</small></div>
+<div class="plot">🎃<small>Ready</small></div>
+<div class="plot">🍄<small>Growing · 5h</small></div>
+<div class="plot">🌽<small>Ready</small></div>
+<div class="plot">🍓<small>Growing · 1h</small></div>
+<div class="plot">🐔<small>+2 / hour</small></div>
+<div class="plot">🔒<small>Locked plot</small></div>
+</div>
+<div class="claimbar"><span>⏰ Offline harvest piles up for up to <b>12 hours</b> — check in twice a day.</span><a class="btn main" href="#" onclick="return false">Claim harvest</a></div>
+</div>
+<p class="note">Concept art + interface preview — this is how the farm will look and play. It is not live gameplay yet.</p>
+</section>
+
 <section>
 <h2>The Genesis Plot <span>NFT</span></h2>
 <div class="loop">
@@ -74,6 +138,7 @@ footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 <p>🔄 <b>Transferable</b> — done playing? Sell your plot to the next farmer on any Solana NFT marketplace.</p>
 </div>
 </section>
+
 <section>
 <h2>$MANCER <span>token</span></h2>
 <table>
@@ -85,14 +150,85 @@ footer{text-align:center;color:var(--mut);font-size:14px;padding-bottom:34px}
 <tr><td>Utility</td><td>Sell harvest for it · buy upgrades with it · 10% of every upgrade spend is <b>burned</b></td></tr>
 </table>
 </section>
+
+<section>
+<h2>Tokenomics, <span>at a glance</span></h2>
+<div class="flow">
+<p><b>$MANCER supply: 1,000,000,000 — fixed.</b> Fair launch on pump.fun: the whole supply goes to the bonding curve. No presale, no team allocation, no hidden wallets.</p>
+<div class="bar"><i style="width:100%"></i></div>
+<p>🪙 <b>100% — public bonding curve</b> (fair launch, everyone buys at the same curve)</p>
+<p>🚫 <b>0% — presale · 0% — team allocation</b></p>
+</div>
+<br>
+<div class="flow">
+<p><b>Where each $1 registration goes:</b></p>
+<div class="bar"><i style="width:50%"></i></div>
+<p>💰 <b>50% → Rewards Pool</b> (pays for harvests) · 🛠️ <b>50% → operations</b></p>
+<p><b>Where each upgrade spend goes:</b></p>
+<div class="bar"><i style="width:90%;background:linear-gradient(90deg,var(--pur),var(--gold))"></i></div>
+<p>♻️ <b>90% → recycled to the Rewards Pool</b> · 🔥 <b>10% → burned forever</b></p>
+</div>
+<br>
+<div class="flow"><p><b>How the Rewards Pool flows:</b></p></div>
+<div class="poolflow">
+<div class="pf"><span class="big">🎫</span> <b>$1 registrations</b><br>50% of every signup flows in</div>
+<div class="arrow">➜</div>
+<div class="pf"><span class="big">💰</span> <b>Rewards Pool</b><br>also fed by $MANCER creator fees</div>
+<div class="arrow">➜</div>
+<div class="pf"><span class="big">🧺</span> <b>Harvest payouts</b><br>Produce sells for $MANCER at a rate that floats with the pool</div>
+</div>
+<div class="poolflow">
+<div class="pf"><span class="big">⬆️</span> <b>Upgrade spend</b></div>
+<div class="arrow">➜</div>
+<div class="pf"><b>90%</b> ♻️ recycled back to the pool</div>
+<div class="pf"><b>10%</b> 🔥 burned forever</div>
+</div>
+</section>
+
 <section>
 <h2>An economy that <span>loops</span></h2>
 <div class="loop">
 <p>Player rewards are paid from a <b>Rewards Pool</b> — funded by <b>50% of every registration</b> plus <b>creator fees</b> from $MANCER trading. The Produce→$MANCER rate floats with the pool, so rewards never exceed what the pool holds. Upgrades recycle 90% back to the pool and <b>burn 10% forever</b>: the more people play, the scarcer $MANCER gets. Production is calculated server-side — the server is the referee, clock tricks do nothing.</p>
 </div>
 </section>
+
+<section>
+<h2>Launch <span>status</span></h2>
+<div class="phases">
+<div class="phase"><div class="st" style="color:var(--grn)">● LIVE NOW</div><h3>Website &amp; litepaper</h3><p>This site and the litepaper are published — the game design is locked and public for anyone to read.</p></div>
+<div class="phase"><div class="st" style="color:var(--gold)">◐ UP NEXT</div><h3>$MANCER fair launch</h3><p>The token launches on pump.fun and $1 registration opens at the same moment. No date is set yet — the contract address appears here and on X first, nowhere else.</p></div>
+<div class="phase"><div class="st" style="color:var(--mut)">○ AFTER LAUNCH</div><h3>Farms go live</h3><p>Genesis Plot NFTs are minted to registrants and the first farms start producing around the clock.</p></div>
+</div>
+<p class="note">⚠️ No contract address exists yet. Any $MANCER you find before the official launch announcement is a fake.</p>
+</section>
+
+<section class="faq">
+<h2>Questions, <span>answered</span></h2>
+<details><summary>When does Cropmancer launch?</summary><p>Phase 1 (this site + litepaper) is live now. Phase 2 — the $MANCER token launch and $1 registration — has no fixed date yet. It opens when the token launches; watch @MuseAIv3 on X for the announcement.</p></details>
+<details><summary>What do I get for the $1?</summary><p>One Genesis Plot NFT: your access key and starter land in one. It is a compressed NFT on Solana, so minting costs a fraction of a cent. Pay once, keep the plot — there is no subscription.</p></details>
+<details><summary>How do I earn $MANCER?</summary><p>Your farm produces automatically. Claim your Produce and sell it in the in-game Harvest Market for $MANCER. The exchange rate floats with the Rewards Pool, so payouts stay within what the pool holds.</p></details>
+<details><summary>Can I sell my Genesis Plot NFT?</summary><p>Yes — it is transferable. If you stop playing, you can sell your plot to another player on any Solana NFT marketplace. The buyer takes over that farm's land.</p></details>
+<details><summary>Do I have to play every day?</summary><p>No. Offline harvest piles up for up to 12 hours, so checking in once or twice a day is enough. Production is calculated server-side, so changing your device clock does nothing.</p></details>
+<details><summary>Is $MANCER an investment?</summary><p>No. It is a game token: its price is set by traders and can go to zero. Registration buys a game access NFT, not an investment, and there is no guarantee of any price, earnings, or return.</p></details>
+</section>
+
+<section>
+<h2>Join the <span>community</span></h2>
+<div class="comm">
+<a class="btn main" href="https://x.com/MuseAIv3" target="_blank" rel="noopener">𝕏 — @MuseAIv3 · live</a>
+<a class="btn dim" href="#" onclick="return false">✈️ Telegram — coming soon</a>
+<a class="btn dim" href="#" onclick="return false">🎮 Discord — coming soon</a>
+</div>
+<p class="note">Launch announcements land on X first. Telegram and Discord open closer to launch — links will appear here, and only here.</p>
+</section>
+
 <div class="disc">Cropmancer is a game. $MANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is no guarantee of any price, earnings, or return. Game parameters may be tuned before launch; material changes will be announced on the official channels.</div>
 <footer>🌱 Cropmancer — plant the spell. Harvest the bag.<br>Built on Solana · <a href="litepaper.html">Litepaper</a> · <a href="https://x.com/MuseAIv3" target="_blank" rel="noopener">@MuseAIv3</a></footer>
 </div>
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('section,.card,.phase').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),1600);
+</script>
 </body>
 </html>
