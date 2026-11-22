@@ -40,17 +40,20 @@ footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid 
 <img class="mascot" src="cropmancer.jpg" alt="The Cropmancer mascot">
 <div class="note">Status: pre-launch. This document describes the game's design. Nothing in it is a promise of price, earnings, or return.</div>
 </header>
+
 <h2>1. <span>Introduction</span></h2>
 <p>Cropmancer is an idle farming game. Your farm produces on its own — while you work, while you sleep, while the app is closed. You check in once or twice a day, claim your harvest, sell it for $MANCER, and spend $MANCER on upgrades that make your farm produce faster. No reflexes. No grinding. Just numbers going up, on-chain.</p>
+
 <h2>2. Getting in — <span>the Genesis Plot NFT</span></h2>
 <p>Entry is a <b>one-time $1 registration</b>, paid in SOL. In return, the player receives a <b>Genesis Plot NFT</b>:</p>
 <ul>
 <li>It is the player's <b>access key</b> — the game checks NFT ownership from the connected wallet. No NFT, no farm.</li>
 <li>It is the player's <b>starter land</b> — every farm begins as one Genesis Plot.</li>
-<li>It is a <b>compressed NFT (cNFT)</b> on Solana, so minting costs a fraction of a cent and nearly all of the $1 funds the game economy.</li>
+<li>It is an <b>NFT</b> on Solana, minted to the paying wallet when the $1 payment lands. Minting costs a small fraction of the $1 (network rent + fees); the rest funds the game economy.</li>
 <li>It is <b>transferable</b> — a player who stops playing can sell their plot to a new player on any Solana NFT marketplace.</li>
 </ul>
 <p>One active farm per Genesis Plot NFT.</p>
+
 <h2>3. <span>The game loop</span></h2>
 <ol>
 <li><b>Produce</b> — your farm generates Produce automatically, 24/7, at your production rate.</li>
@@ -67,6 +70,7 @@ footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid 
 <tr><td>Registration</td><td>$1 in SOL, one-time</td></tr>
 <tr><td>Upgrade burn</td><td>10% of every upgrade spend</td></tr>
 </table>
+
 <h2>4. The <span>$MANCER</span> token</h2>
 <table>
 <tr><td>Name</td><td>Cropmancer</td></tr>
@@ -82,20 +86,24 @@ footer{text-align:center;color:var(--mut);font-size:13.5px;border-top:1px solid 
 <li><b>Spend it</b> on upgrades: land, animals, machines, and future cosmetics and season passes.</li>
 <li><b>Burn it</b> — 10% of all upgrade spending is burned forever, so the more people play, the scarcer $MANCER gets.</li>
 </ul>
+
 <h2>5. The economy — <span>sources and sinks</span></h2>
 <p>The economy is designed as a loop, not a faucet.</p>
 <p><b>Sources of $MANCER rewards.</b> The Rewards Pool pays for harvests. It is funded by <b>50% of every $1 registration</b> and by <b>creator fees</b> from $MANCER trading (0.30% of bonding-curve volume on pump.fun; tiered after graduation). The Produce→$MANCER rate floats with the pool's balance: a full pool pays generously, a thin pool pays less. Rewards can never exceed what the pool actually holds.</p>
 <p><b>Sinks.</b> Upgrades (90% recycled to the Rewards Pool, <b>10% burned</b>). Future: season passes, cosmetics, extra plots.</p>
 <p><b>Project revenue.</b> 50% of registration fees, plus a creator-fee share allocated to operations.</p>
 <p>This structure means player rewards come from <b>new players and trading activity</b> — stated plainly, the way it should be.</p>
+
 <h2>6. <span>Fair play</span></h2>
 <ul>
 <li>Production is computed server-side; client tampering has no effect.</li>
 <li>One farm per Genesis Plot NFT.</li>
 <li>The Rewards Pool balance and the Produce→$MANCER rate are displayed in-game, in the open.</li>
 </ul>
+
 <h2>7. Risks and <span>disclaimer</span></h2>
 <p>Cropmancer is a game. $MANCER is a game token whose market price is set by traders and can go to zero. Registration buys a game access NFT — not an investment. There is <b>no guarantee of any price, earnings, or return</b>. Game parameters in this litepaper may be tuned before launch; material changes will be announced on the official channels.</p>
+
 <a class="back" href="index.html">← Back to the Cropmancer site</a>
 <footer>Cropmancer — plant the spell. Harvest the bag.<br><a href="index.html">cropmancer.github.io</a> · <a href="https://x.com/MuseAIv3" target="_blank" rel="noopener">@MuseAIv3</a></footer>
 </div>
